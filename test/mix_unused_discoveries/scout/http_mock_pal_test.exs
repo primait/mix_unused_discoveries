@@ -1,7 +1,7 @@
-defmodule MixUnusedDiscoveries.HttpMockPalDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.HttpMockPalTest do
   use ExUnit.Case
 
-  alias MixUnusedDiscoveries.HttpMockPalDiscovery
+  alias MixUnusedDiscoveries.Scout.HttpMockPal
 
   import Mock
 
@@ -14,7 +14,7 @@ defmodule MixUnusedDiscoveries.HttpMockPalDiscoveryTest do
             {MySecondMock, port: 8000}
           ]
       end do
-      usages = HttpMockPalDiscovery.discover_usages(nil)
+      usages = HttpMockPal.discover_usages(nil)
 
       assert {MyFirstMock, :call, 2} in usages
       assert {MySecondMock, :call, 2} in usages
@@ -27,7 +27,7 @@ defmodule MixUnusedDiscoveries.HttpMockPalDiscoveryTest do
       get_env: fn
         :http_mock_pal, :routers, [] -> []
       end do
-      usages = HttpMockPalDiscovery.discover_usages(nil)
+      usages = HttpMockPal.discover_usages(nil)
 
       assert usages == []
     end

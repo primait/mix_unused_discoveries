@@ -1,9 +1,9 @@
-defmodule MixUnusedDiscoveries.AbsintheDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.AbsintheTest do
   use ExUnit.Case
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.AbsintheDiscovery
+  alias MixUnusedDiscoveries.Scout.Absinthe
 
   import Mock
 
@@ -20,7 +20,7 @@ defmodule MixUnusedDiscoveries.AbsintheDiscoveryTest do
         ]
       end do
       usages =
-        AbsintheDiscovery.discover_usages(%Context{
+        Absinthe.discover_usages(%Context{
           exports: %{
             {Schema, :__absinthe_function__, 1} => %Meta{
               file: "schema.ex"
@@ -73,7 +73,7 @@ defmodule MixUnusedDiscoveries.AbsintheDiscoveryTest do
         ]
       end do
       usages =
-        AbsintheDiscovery.discover_usages(%Context{
+        Absinthe.discover_usages(%Context{
           exports: %{
             {Schema, :__absinthe_function__, 1} => %Meta{
               file: "schema.ex"

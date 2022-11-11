@@ -1,9 +1,9 @@
-defmodule MixUnusedDiscoveries.ApplicationDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Application do
   @moduledoc """
   Discovers the callbacks of the current application.
   """
 
-  alias MixUnusedDiscoveries.Helpers.Behaviours
+  alias MixUnusedDiscoveries.Behaviours
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 

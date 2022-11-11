@@ -1,7 +1,7 @@
-defmodule MixUnusedDiscoveries.AmqpxConsumersDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.AmqpxTest do
   use ExUnit.Case
 
-  alias MixUnusedDiscoveries.AmqpxConsumersDiscovery
+  alias MixUnusedDiscoveries.Scout.Amqpx
 
   import Mock
 
@@ -25,7 +25,7 @@ defmodule MixUnusedDiscoveries.AmqpxConsumersDiscoveryTest do
          end
        ]}
     ] do
-      usages = AmqpxConsumersDiscovery.discover_usages(nil)
+      usages = Amqpx.discover_usages(nil)
 
       assert {MyApplication.MyFirstConsumer, :setup, 1} in usages
       assert {MyApplication.MyFirstConsumer, :handle_message, 3} in usages
@@ -45,7 +45,7 @@ defmodule MixUnusedDiscoveries.AmqpxConsumersDiscoveryTest do
          end
        ]}
     ] do
-      usages = AmqpxConsumersDiscovery.discover_usages(nil)
+      usages = Amqpx.discover_usages(nil)
 
       assert usages == []
     end

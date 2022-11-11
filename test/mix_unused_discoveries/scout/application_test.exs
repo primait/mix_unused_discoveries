@@ -1,7 +1,7 @@
-defmodule MixUnusedDiscoveries.ApplicationDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.ApplicationTest do
   use ExUnit.Case
 
-  alias MixUnusedDiscoveries.ApplicationDiscovery
+  alias MixUnusedDiscoveries.Scout.Application, as: Scout
 
   import Mock
 
@@ -16,7 +16,7 @@ defmodule MixUnusedDiscoveries.ApplicationDiscoveryTest do
                {MyApp, :start, 2},
                {MyApp, :start_phase, 3},
                {MyApp, :stop, 1}
-             ]) === MapSet.new(ApplicationDiscovery.discover_usages([]))
+             ]) === MapSet.new(Scout.discover_usages([]))
     end
   end
 end

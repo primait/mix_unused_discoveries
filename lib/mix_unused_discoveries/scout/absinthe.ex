@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.AbsintheDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Absinthe do
   @moduledoc """
   Discovers some components used dynamically by [Absinthe](http://absinthe-graphql.org/).
 
@@ -12,8 +12,8 @@ defmodule MixUnusedDiscoveries.AbsintheDiscovery do
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.Helpers.Aliases
-  alias MixUnusedDiscoveries.Helpers.Source
+  alias MixUnusedDiscoveries.Aliases
+  alias MixUnusedDiscoveries.Source
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 

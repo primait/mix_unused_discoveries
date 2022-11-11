@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.VmstatsDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Vmstats do
   @moduledoc """
   Discovers the sink configured for the [vmstats library](https://hex.pm/packages/vmstats_ex).
   """

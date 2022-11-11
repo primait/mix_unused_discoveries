@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.Helpers.Behaviours do
+defmodule MixUnusedDiscoveries.Behaviours do
   @moduledoc false
 
   @spec callbacks(module()) :: [mfa()]

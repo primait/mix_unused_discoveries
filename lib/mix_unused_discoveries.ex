@@ -6,14 +6,14 @@ defmodule MixUnusedDiscoveries do
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 
   @discoveries [
-    MixUnusedDiscoveries.AbsintheDiscovery,
-    MixUnusedDiscoveries.AmqpxConsumersDiscovery,
-    MixUnusedDiscoveries.ApplicationDiscovery,
-    MixUnusedDiscoveries.ExqDiscovery,
-    MixUnusedDiscoveries.HttpMockPalDiscovery,
-    MixUnusedDiscoveries.PhoenixDiscovery,
-    MixUnusedDiscoveries.SupervisorDiscovery,
-    MixUnusedDiscoveries.VmstatsDiscovery
+    MixUnusedDiscoveries.Scout.Absinthe,
+    MixUnusedDiscoveries.Scout.Amqpx,
+    MixUnusedDiscoveries.Scout.Application,
+    MixUnusedDiscoveries.Scout.Exq,
+    MixUnusedDiscoveries.Scout.HttpMockPal,
+    MixUnusedDiscoveries.Scout.Phoenix,
+    MixUnusedDiscoveries.Scout.Supervisor,
+    MixUnusedDiscoveries.Scout.Vmstats
   ]
 
   @impl true

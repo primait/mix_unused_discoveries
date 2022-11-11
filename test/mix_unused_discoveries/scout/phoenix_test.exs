@@ -1,9 +1,9 @@
-defmodule MixUnusedDiscoveries.PhoenixDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.PhoenixTest do
   use ExUnit.Case
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.PhoenixDiscovery
+  alias MixUnusedDiscoveries.Scout.Phoenix
 
   import Mock
 
@@ -25,7 +25,7 @@ defmodule MixUnusedDiscoveries.PhoenixDiscoveryTest do
         end
       ] end do
       usages =
-        PhoenixDiscovery.discover_usages(%Context{
+        Phoenix.discover_usages(%Context{
           exports: %{
             {MyPhoenixApp.PageController, :index, 2} => %Meta{
               file: "fooweb/router.ex"
@@ -66,7 +66,7 @@ defmodule MixUnusedDiscoveries.PhoenixDiscoveryTest do
         end
       | end do
       usages =
-        PhoenixDiscovery.discover_usages(%Context{
+        Phoenix.discover_usages(%Context{
           exports: %{
             {MyPhoenixApp.PageController, :index, 2} => %Meta{file: "router.ex"}
           }

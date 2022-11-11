@@ -1,9 +1,9 @@
-defmodule MixUnusedDiscoveries.ExqDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.ExqTest do
   use ExUnit.Case
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.ExqDiscovery
+  alias MixUnusedDiscoveries.Scout.Exq, as: Scout
 
   import Mock
 
@@ -21,7 +21,7 @@ defmodule MixUnusedDiscoveries.ExqDiscoveryTest do
           }
       end do
       usages =
-        ExqDiscovery.discover_usages(%Context{
+        Scout.discover_usages(%Context{
           calls:
             Graph.new()
             |> Graph.add_edge({Example, :f, 0}, {Exq, :enqueue, 4}),
@@ -48,7 +48,7 @@ defmodule MixUnusedDiscoveries.ExqDiscoveryTest do
           }
       end do
       usages =
-        ExqDiscovery.discover_usages(%Context{
+        Scout.discover_usages(%Context{
           calls:
             Graph.new()
             |> Graph.add_edge({Example, :f, 0}, {Exq, :enqueue_in, 6}),
@@ -75,7 +75,7 @@ defmodule MixUnusedDiscoveries.ExqDiscoveryTest do
           }
       end do
       usages =
-        ExqDiscovery.discover_usages(%Context{
+        Scout.discover_usages(%Context{
           calls:
             Graph.new()
             |> Graph.add_edge({Example, :f, 0}, {Exq, :enqueue_at, 5}),

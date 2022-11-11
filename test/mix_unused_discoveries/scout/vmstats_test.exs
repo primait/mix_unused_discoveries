@@ -1,7 +1,7 @@
-defmodule MixUnusedDiscoveries.VmstatsDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.VmstatsTest do
   use ExUnit.Case
 
-  alias MixUnusedDiscoveries.VmstatsDiscovery
+  alias MixUnusedDiscoveries.Scout.Vmstats
 
   import Mock
 
@@ -10,7 +10,7 @@ defmodule MixUnusedDiscoveries.VmstatsDiscoveryTest do
       get_env: fn
         :vmstats, :sink -> VMStatsSink
       end do
-      usages = VmstatsDiscovery.discover_usages(nil)
+      usages = Vmstats.discover_usages(nil)
 
       assert {VMStatsSink, :collect, 3} in usages
       assert 1 == length(usages)
@@ -22,7 +22,7 @@ defmodule MixUnusedDiscoveries.VmstatsDiscoveryTest do
       get_env: fn
         :vmstats, :sink -> nil
       end do
-      usages = VmstatsDiscovery.discover_usages(nil)
+      usages = Vmstats.discover_usages(nil)
 
       assert usages == []
     end

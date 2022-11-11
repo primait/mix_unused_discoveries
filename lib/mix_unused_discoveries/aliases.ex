@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.Helpers.Aliases do
+defmodule MixUnusedDiscoveries.Aliases do
   @moduledoc false
 
   @type t :: %{module() => module()}

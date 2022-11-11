@@ -1,9 +1,9 @@
-defmodule MixUnusedDiscoveries.SupervisorDiscoveryTest do
+defmodule MixUnusedDiscoveries.Scout.SupervisorTest do
   use ExUnit.Case
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.SupervisorDiscovery
+  alias MixUnusedDiscoveries.Scout.Supervisor
 
   import Mock
 
@@ -31,7 +31,7 @@ defmodule MixUnusedDiscoveries.SupervisorDiscoveryTest do
         }
       end do
       usages =
-        SupervisorDiscovery.discover_usages(%Context{
+        Supervisor.discover_usages(%Context{
           exports: %{
             {MyApp.AGenServer, :handle_call, 3} => %Meta{
               file: "a_genserver.ex"

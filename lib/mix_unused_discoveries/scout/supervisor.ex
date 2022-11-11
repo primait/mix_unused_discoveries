@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.SupervisorDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Supervisor do
   @moduledoc """
   Discovers the GenServers started by Supervisor.
 
@@ -33,7 +33,7 @@ defmodule MixUnusedDiscoveries.SupervisorDiscovery do
   """
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
-  alias MixUnusedDiscoveries.Helpers.Source
+  alias MixUnusedDiscoveries.Source
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 

@@ -1,11 +1,11 @@
-defmodule MixUnusedDiscoveries.ExqDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Exq do
   @moduledoc """
   Discovers functions called by [Exq](https://hex.pm/packages/exq).
   """
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
-  alias MixUnusedDiscoveries.Helpers.Aliases
-  alias MixUnusedDiscoveries.Helpers.Source
+  alias MixUnusedDiscoveries.Aliases
+  alias MixUnusedDiscoveries.Source
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 

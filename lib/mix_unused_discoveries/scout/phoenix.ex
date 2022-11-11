@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.PhoenixDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Phoenix do
   @moduledoc """
   Discovers some components used dynamically by the [Phoenix framework](https://www.phoenixframework.org/).
 
@@ -26,8 +26,8 @@ defmodule MixUnusedDiscoveries.PhoenixDiscovery do
   """
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
-  alias MixUnusedDiscoveries.Helpers.Aliases
-  alias MixUnusedDiscoveries.Helpers.Source
+  alias MixUnusedDiscoveries.Aliases
+  alias MixUnusedDiscoveries.Source
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 

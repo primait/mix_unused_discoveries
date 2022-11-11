@@ -1,7 +1,7 @@
-defmodule MixUnusedDiscoveries.Helpers.AliasesTest do
+defmodule MixUnusedDiscoveries.AliasesTest do
   use ExUnit.Case
 
-  alias MixUnusedDiscoveries.Helpers.Aliases
+  alias MixUnusedDiscoveries.Aliases
 
   test "it is able to resolve simple aliases" do
     aliases =

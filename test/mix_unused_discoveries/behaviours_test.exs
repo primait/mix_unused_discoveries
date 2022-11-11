@@ -1,7 +1,7 @@
-defmodule MixUnusedDiscoveries.Helpers.BehavioursTest do
+defmodule MixUnusedDiscoveries.BehavioursTest do
   use ExUnit.Case
 
-  alias MixUnusedDiscoveries.Helpers.Behaviours
+  alias MixUnusedDiscoveries.Behaviours
 
   test "get module callbacks" do
     assert [{MixUnused.Analyzers.Unreachable.Usages, :discover_usages, 1}] =

@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.AmqpxConsumersDiscovery do
+defmodule MixUnusedDiscoveries.Scout.Amqpx do
   @moduledoc """
   Discovers the consumers configured for the [amqpx library](https://hex.pm/packages/amqpx).
   """

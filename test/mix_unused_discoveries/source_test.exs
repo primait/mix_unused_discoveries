@@ -1,8 +1,8 @@
-defmodule MixUnusedDiscoveries.Helpers.SourceTest do
+defmodule MixUnusedDiscoveries.SourceTest do
   use ExUnit.Case
 
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.Helpers.Source
+  alias MixUnusedDiscoveries.Source
 
   import Mock
 

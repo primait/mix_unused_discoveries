@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.Helpers.Source do
+defmodule MixUnusedDiscoveries.Source do
   @moduledoc false
 
   alias MixUnused.Exports

@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.HttpMockPalDiscovery do
+defmodule MixUnusedDiscoveries.Scout.HttpMockPal do
   @moduledoc """
   Discovers the mock modules configured for the [http_mock_pal library](https://hex.pm/packages/http_mock_pal).
   """
