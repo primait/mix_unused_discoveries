@@ -2,8 +2,8 @@ defmodule MixUnusedDiscoveries.PhoenixDiscoveryTest do
   use ExUnit.Case
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
-  alias MixUnusedDiscoveries.PhoenixDiscovery
   alias MixUnused.Meta
+  alias MixUnusedDiscoveries.PhoenixDiscovery
 
   import Mock
 
@@ -49,7 +49,6 @@ defmodule MixUnusedDiscoveries.PhoenixDiscoveryTest do
           @moduledoc false
 
           alias MyPhoenixApp.Plugs.ParametricPlugs, as: ParPlug
-
 
           use MyPhoenixApp, :router
 
