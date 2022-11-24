@@ -10,6 +10,7 @@ defmodule MixUnusedDiscoveries do
     MixUnusedDiscoveries.Scout.Amqpx,
     MixUnusedDiscoveries.Scout.Application,
     MixUnusedDiscoveries.Scout.Exq,
+    MixUnusedDiscoveries.Scout.ExqMiddleware,
     MixUnusedDiscoveries.Scout.HttpMockPal,
     MixUnusedDiscoveries.Scout.Phoenix,
     MixUnusedDiscoveries.Scout.Supervisor,

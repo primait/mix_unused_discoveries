@@ -9,7 +9,8 @@ defmodule MixUnusedDiscoveries.MixProject do
       package: [
         licenses: ~w[MIT]
       ],
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -20,6 +21,21 @@ defmodule MixUnusedDiscoveries.MixProject do
       {:ex_doc, "~> 0.29", only: :dev, runtime: false},
       {:mix_unused, github: "primait/mix_unused"},
       {:mock, "~> 0.3.7", only: :test}
+    ]
+  end
+
+  defp aliases do
+    [
+      check: [
+        "compile --all-warnings --ignore-module-conflict --warnings-as-errors --debug-info",
+        "format --check-formatted mix.exs \"lib/**/*.{ex,exs}\" \"test/**/*.{ex,exs}\" \"priv/**/*.{ex,exs}\" \"config/**/*.{ex,exs}\"",
+        "deps.unlock --check-unused",
+        "credo -a --strict",
+        "dialyzer"
+      ],
+      "format.all": [
+        "format mix.exs \"lib/**/*.{ex,exs}\" \"test/**/*.{ex,exs}\" \"priv/**/*.{ex,exs}\" \"config/**/*.{ex,exs}\""
+      ]
     ]
   end
 end
