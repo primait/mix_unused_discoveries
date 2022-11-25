@@ -10,9 +10,9 @@ defmodule MixUnusedDiscoveries.Scout.ExqMiddleware do
 
   @spec discover_usages(Context.t()) :: [mfa()]
   def discover_usages(_context) do
-    for m <- Application.get_env(:exq, :middleware, []),
-      {_m, f, a} <- Behaviours.callbacks(Exq.Middleware.Behaviour) do
-        {m, f, a}
-      end
+    for module <- Application.get_env(:exq, :middleware, []),
+        {_m, f, a} <- Behaviours.callbacks(Exq.Middleware.Behaviour) do
+      {module, f, a}
+    end
   end
 end
