@@ -32,9 +32,6 @@ defmodule MixUnusedDiscoveries.MixProject do
         "deps.unlock --check-unused",
         "credo -a --strict",
         "dialyzer"
-      ],
-      "format.all": [
-        "format mix.exs \"lib/**/*.{ex,exs}\" \"test/**/*.{ex,exs}\" \"priv/**/*.{ex,exs}\" \"config/**/*.{ex,exs}\""
       ]
     ]
   end

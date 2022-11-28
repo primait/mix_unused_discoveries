@@ -1,9 +1,9 @@
-defmodule MixUnusedDiscoveries.Scout.ExqTest do
+defmodule MixUnusedDiscoveries.Scout.ExqEnqueueTest do
   use ExUnit.Case
 
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnused.Meta
-  alias MixUnusedDiscoveries.Scout.Exq, as: Scout
+  alias MixUnusedDiscoveries.Scout.ExqEnqueue, as: Scout
 
   import Mock
 

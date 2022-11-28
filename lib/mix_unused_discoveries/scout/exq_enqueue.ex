@@ -1,4 +1,4 @@
-defmodule MixUnusedDiscoveries.Scout.Exq do
+defmodule MixUnusedDiscoveries.Scout.ExqEnqueue do
   @moduledoc """
   Discovers functions called by [Exq](https://hex.pm/packages/exq).
   """

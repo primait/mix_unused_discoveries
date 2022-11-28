@@ -2,9 +2,9 @@ defmodule MixUnusedDiscoveries.Scout.Amqpx do
   @moduledoc """
   Discovers the consumers configured for the [amqpx library](https://hex.pm/packages/amqpx).
   """
+  alias MixUnusedDiscoveries.Behaviours
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
-  alias MixUnusedDiscoveries.Behaviours
 
   @impl true
   def discover_usages(_context) do

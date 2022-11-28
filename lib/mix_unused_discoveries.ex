@@ -9,7 +9,7 @@ defmodule MixUnusedDiscoveries do
     MixUnusedDiscoveries.Scout.Absinthe,
     MixUnusedDiscoveries.Scout.Amqpx,
     MixUnusedDiscoveries.Scout.Application,
-    MixUnusedDiscoveries.Scout.Exq,
+    MixUnusedDiscoveries.Scout.ExqEnqueue,
     MixUnusedDiscoveries.Scout.ExqMiddleware,
     MixUnusedDiscoveries.Scout.HttpMockPal,
     MixUnusedDiscoveries.Scout.Phoenix,
