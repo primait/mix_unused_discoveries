@@ -2,6 +2,7 @@ defmodule MixUnusedDiscoveries.Scout.Amqpx do
   @moduledoc """
   Discovers the consumers configured for the [amqpx library](https://hex.pm/packages/amqpx).
   """
+  alias MixUnusedDiscoveries.Behaviours
 
   @behaviour MixUnused.Analyzers.Unreachable.Usages
 
@@ -10,7 +11,8 @@ defmodule MixUnusedDiscoveries.Scout.Amqpx do
     app = Mix.Project.config()[:app]
 
     for %{handler_module: module} <- Application.get_env(app, :consumers, []),
-        mfa <- [{module, :setup, 1}, {module, :handle_message, 3}],
-        do: mfa
+        {_m, f, a} <- Behaviours.callbacks(Amqpx.Gen.Consumer) do
+      {module, f, a}
+    end
   end
 end

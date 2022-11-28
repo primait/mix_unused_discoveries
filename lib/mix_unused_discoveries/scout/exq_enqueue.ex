@@ -1,8 +1,9 @@
-defmodule MixUnusedDiscoveries.Scout.Exq do
+defmodule MixUnusedDiscoveries.Scout.ExqEnqueue do
   @moduledoc """
   Discovers functions called by [Exq](https://hex.pm/packages/exq).
   """
 
+  alias MixUnused.Analyzers.Calls
   alias MixUnused.Analyzers.Unreachable.Usages.Context
   alias MixUnusedDiscoveries.Aliases
   alias MixUnusedDiscoveries.Source
@@ -18,6 +19,7 @@ defmodule MixUnusedDiscoveries.Scout.Exq do
         do: mfa
   end
 
+  @spec modules_calling_exq(Calls.t()) :: [module()]
   defp modules_calling_exq(calls) do
     for m <- [Exq, Exq.Enqueuer],
         {f, a} <- [
@@ -31,6 +33,7 @@ defmodule MixUnusedDiscoveries.Scout.Exq do
         do: caller
   end
 
+  @spec functions_called_by_exq(Macro.t()) :: [mfa()]
   defp functions_called_by_exq(ast) do
     aliases = Aliases.new(ast)
 
@@ -40,6 +43,7 @@ defmodule MixUnusedDiscoveries.Scout.Exq do
         do: {module, :perform, ariety}
   end
 
+  @spec function_called_by_exq(Macro.t()) :: {module(), pos_integer()} | nil
   defp function_called_by_exq(ast) do
     case ast do
       # Exq.enqueue(pid, queue, worker, ...)
