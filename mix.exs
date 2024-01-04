@@ -4,7 +4,7 @@ defmodule MixUnusedDiscoveries.MixProject do
   def project do
     [
       app: :mix_unused_discoveries,
-      version: "0.1.0",
+      version: "0.1.0-rc.0",
       elixir: "~> 1.13",
       package: [
         licenses: ~w[MIT]
