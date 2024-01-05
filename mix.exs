@@ -12,7 +12,7 @@ defmodule MixUnusedDiscoveries.MixProject do
       package: package(),
       deps: deps(),
       aliases: aliases(),
-      docs: docs(),
+      docs: docs()
     ]
   end
 
