@@ -1,16 +1,18 @@
 defmodule MixUnusedDiscoveries.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/primait/mix_unused_discoveries"
+  @version "0.1.0"
+
   def project do
     [
       app: :mix_unused_discoveries,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.13",
-      package: [
-        licenses: ~w[MIT]
-      ],
+      package: package(),
       deps: deps(),
-      aliases: aliases()
+      aliases: aliases(),
+      docs: docs()
     ]
   end
 
@@ -33,6 +35,29 @@ defmodule MixUnusedDiscoveries.MixProject do
         "credo -a --strict",
         "dialyzer"
       ]
+    ]
+  end
+
+  defp docs do
+    [
+      extras: [
+        "LICENSE.md": [title: "License"],
+        "README.md": [title: "Overview"]
+      ],
+      main: "readme",
+      source_url: @source_url,
+      source_ref: @version,
+      formatters: ["html"]
+    ]
+  end
+
+  defp package do
+    [
+      description: "A collection of usages discovery modules to use with mix_unused",
+      name: "mix_unused_discoveries",
+      maintainers: ["Prima"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url}
     ]
   end
 end
