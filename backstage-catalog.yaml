@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "mix_unused_discoveries"
+  description: "A collection of usages discovery modules to use with mix"
+spec:
+  type: "library"
+  lifecycle: production
+  owner: "group:default/team-developer-experience"
+  system: prima.it
